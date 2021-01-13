@@ -3,7 +3,7 @@
 
 #define N 10
 
-int maxNeighbors(int *x);
+int maxNeighbors(int x[]);
 
 int main()
 {
@@ -13,7 +13,7 @@ int main()
     return 0;
 }
 
-int maxNeighbors(int *x) {
+int maxNeighbors(int x[]) {
     int max_neighbors = x[0]+x[1], index = 0;
 
     for(int j=1; j<N-2; j++) {

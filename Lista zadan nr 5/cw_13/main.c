@@ -3,8 +3,6 @@
 
 #define N 3
 
-void multiply(int *tab, int number);
-
 int main()
 {
     int tab[N] = {1,2,3};

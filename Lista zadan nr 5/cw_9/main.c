@@ -3,7 +3,7 @@
 
 #define N 10
 
-void multiply(int *tab, int number);
+void multiply(int tab[], int number);
 
 int main()
 {
@@ -17,7 +17,7 @@ int main()
     return 0;
 }
 
-void multiply(int *tab, int number) {
+void multiply(int tab[], int number) {
     for(int j=0; j<N; j++) {
        tab[j] *= number;
     }

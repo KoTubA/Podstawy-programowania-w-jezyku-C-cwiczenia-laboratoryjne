@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void reverseTab(int tab[3][5], int m, int n);
+void reverseTab(int tab[][5], int m, int n);
 
 int main()
 {
@@ -12,7 +12,7 @@ int main()
     };
 
     reverseTab(tablica, 3, 5);
-    
+
     for(int i=0; i<3; i++) {
         for(int j=0; j<5; j++) {
             printf("%d ", tablica[i][j]);
@@ -23,7 +23,7 @@ int main()
     return 0;
 }
 
-void reverseTab(int tab[3][5], int m, int n) {
+void reverseTab(int tab[][5], int m, int n) {
     int ctab[m][n];
 
     for(int a=0; a<m; a++) {
@@ -31,7 +31,7 @@ void reverseTab(int tab[3][5], int m, int n) {
             ctab[a][b] = tab[a][b];
         }
     };
-    
+
     for(int i=0; i<m; i++) {
         for(int j=1; j<=n; j++) {
             tab[i][j-1] = ctab[i][n-j];

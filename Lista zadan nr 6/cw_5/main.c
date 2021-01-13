@@ -4,16 +4,16 @@
 
 #define N 5
 
-void complete_array(double tablica[N][N]);
-void show_array(double tab[N][N]);
-void resetDiagonal(double rtab[N][N]);
-double sumDiagonal(double stab[N][N]);
-double sumRow(double srtab[N][N], int row);
-double sumColumn(double sctab[N][N], int column);
-void reverseRow(double rrtab[N][N], int reverse_row1, int reverse_row2);
-void resetRowAndCloumn(double rractab[N][N]);
-void transpositionArray(double ttab[N][N]);
-void resetBelowMainDiagonal(double rbmdtab[N][N]);
+void complete_array(double tablica[][N]);
+void show_array(double tab[][N]);
+void resetDiagonal(double rtab[][N]);
+double sumDiagonal(double stab[][N]);
+double sumRow(double srtab[][N], int row);
+double sumColumn(double sctab[][N], int column);
+void reverseRow(double rrtab[][N], int reverse_row1, int reverse_row2);
+void resetRowAndCloumn(double rractab[][N]);
+void transpositionArray(double ttab[][N]);
+void resetBelowMainDiagonal(double rbmdtab[][N]);
 
 int main()
 {
@@ -37,7 +37,7 @@ int main()
     return 0;
 }
 
-void complete_array(double tablica[N][N]) {
+void complete_array(double tablica[][N]) {
     srand(time(NULL));
     for(int i = 0; i<N; i++){
         for(int j = 0; j<N; j++){
@@ -46,7 +46,7 @@ void complete_array(double tablica[N][N]) {
     }
 }
 
-void show_array(double tab[N][N]) {
+void show_array(double tab[][N]) {
     for(int i = 0; i<N; i++) {
         for(int j = 0; j<N; j++){
             printf("%.2f ",tab[i][j]);
@@ -56,13 +56,13 @@ void show_array(double tab[N][N]) {
     printf("\n");
 }
 
-void resetDiagonal(double rtab[N][N]) {
+void resetDiagonal(double rtab[][N]) {
     for(int i = 0; i<N; i++){
         rtab[i][i] = 0;
     }
 }
 
-double sumDiagonal(double stab[N][N]) {
+double sumDiagonal(double stab[][N]) {
     double sum = 0;
     for(int i = 0; i<N; i++){
         sum += stab[i][i];
@@ -71,7 +71,7 @@ double sumDiagonal(double stab[N][N]) {
     return sum;
 }
 
-double sumRow(double srtab[N][N], int row) {
+double sumRow(double srtab[][N], int row) {
     double rsum = 0;
 
     for(int i = 0; i<N; i++){
@@ -81,7 +81,7 @@ double sumRow(double srtab[N][N], int row) {
     return rsum;
 }
 
-double sumColumn(double sctab[N][N], int column)  {
+double sumColumn(double sctab[][N], int column)  {
     double csum = 0;
 
     for(int i = 0; i<N; i++){
@@ -91,7 +91,7 @@ double sumColumn(double sctab[N][N], int column)  {
     return csum;
 }
 
-void reverseRow(double rrtab[N][N], int reverse_row1, int reverse_row2) {
+void reverseRow(double rrtab[][N], int reverse_row1, int reverse_row2) {
     double arr[N];
     for(int i=0; i<N; i++) {
         arr[i] = rrtab[reverse_row1][i];
@@ -103,7 +103,7 @@ void reverseRow(double rrtab[N][N], int reverse_row1, int reverse_row2) {
     }
 }
 
-void resetRowAndCloumn(double rractab[N][N]) {
+void resetRowAndCloumn(double rractab[][N]) {
     int x = 0, y = 0;
     double max = rractab[0][0];
 
@@ -126,7 +126,7 @@ void resetRowAndCloumn(double rractab[N][N]) {
 
 }
 
-void transpositionArray(double ttab[N][N]) {
+void transpositionArray(double ttab[][N]) {
     int ctab[N][N];
 
     for(int a=0; a<N; a++) {
@@ -143,7 +143,7 @@ void transpositionArray(double ttab[N][N]) {
 
 }
 
-void resetBelowMainDiagonal(double rbmdtab[N][N]) {
+void resetBelowMainDiagonal(double rbmdtab[][N]) {
     for(int i=1; i<N; i++) {
         for(int j=0; j<N; j++) {
             if(i>j) rbmdtab[i][j] = 0;

@@ -3,8 +3,8 @@
 
 #define N 100
 
-void bubblesort(int *table);
-void randomNumber(int *tablica);;
+void bubblesort(int table[]);
+void randomNumber(int tablica[]);;
 
 int main()
 {
@@ -19,7 +19,7 @@ int main()
     return 0;
 }
 
-void bubblesort(int *table)
+void bubblesort(int table[])
 {
 	int i, j, temp;
 	for (i = 0; i<N-1; i++)
@@ -36,7 +36,7 @@ void bubblesort(int *table)
     }
 }
 
-void randomNumber(int *tablica) {
+void randomNumber(int tablica[]) {
     srand(time(NULL));
     for(int i = 0; i<N; i++){
         tablica[i] = rand()%201-100;
