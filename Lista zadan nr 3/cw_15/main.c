@@ -4,37 +4,45 @@
 int main()
 {
 
-    int operation, saldo, money;
+    int saldo = 0, operation, money;
 
     do {
-        printf("0 - zeruj konto 1 - wp³ac podana kwote \n 2 - wyp³ac podana kwote \n 3 - pokaz saldo \n 4 - zakoñcz obs³uge konta \n");
+        printf("\n0 - zeruj konto \n1 - wplac podana kwote \n2 - wyplac podana kwote \n3 - pokaz saldo \n4 - zakoncz obsluge konta \n");
         scanf("%d", &operation);
         switch(operation) {
-            case:0 {
-                printf("Pomyslnie wyplacono %dzl", saldo);
+            case 0: {
+                if (saldo==0) printf("Konto jest puste! \n");
+                else printf("Pomyslnie wyplacono %dzl \n", saldo);
                 saldo = 0;
                 break;
             }
-            case: 1 {
+            case 1: {
                 printf("Podaj kwote jaka chesz wplacic: \n");
                 scanf("%d", &money);
-                printf("Pomyslnie wplacono %dzl", money);
+                saldo += money;
+                printf("Pomyslnie wplacono %dzl \n", money);
                 break;
             }
-            case: 2 {
+            case 2: {
                 printf("Podaj kwote jaka chesz wyplacic: \n");
                 scanf("%d", &money);
-                if(money>saldo) printf("Podana kwota przekracza saldo konta!")
-                else  printf("Pomyslnie wyplacono %dzl", money);
+                if(money>saldo) {
+                    printf("Podana kwota przekracza saldo konta! \n");
+                }
+                else {
+                    printf("Pomyslnie wyplacono %dzl \n", money);
+                    saldo -= money;
+                }
                 break;
             }
-            case: 3 {
-                printf("Saldo konta: %dzl", saldo);
+            case 3: {
+                printf("Saldo konta: %dzl \n", saldo);
                 break;
             }
-            default break;
+            default:
+                break;
         }
-    } while(operation>=0&&operation<=3)
+    } while(operation>=0&&operation<=3);
 
     return 0;
 }
