@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct Products {
+struct Products {
     int id;
     char name[15];
     double weight;
